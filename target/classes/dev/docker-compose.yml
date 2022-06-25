@@ -1,0 +1,17 @@
+version: "3.5"
+
+services:
+  db:
+    container_name: location-app
+    #image source pour le conteneur
+    image: postgres:latest
+    #permet de spécifier le point de montage entre le système hôte et les conteneurs
+    volumes:
+      - $HOME/locationApp/db/location:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: locpass
+      POSTGRES_DB: location
+      POSTGRES_USER: locuser
+    #permet de definir les ports disponibles entre la machine host et le conteneur
+    ports:
+      - "5432:5432"

@@ -1,0 +1,27 @@
+# Server
+server:
+  port: 8888
+  servlet:
+    context-path: /ws/location-app
+
+# Spring
+spring:
+  application:
+    name: location-app-service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: locuser
+    password: locpass
+    url: jdbc:postgresql://localhost:5432/location
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: update
+
+# Springdoc
+springdoc:
+  api-docs:
+    path: "/api-docs"
+  swagger-ui:
+    path: "/swagger-ui"
+    disable-swagger-default-url: true
